@@ -21,6 +21,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/fingerpe'
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
-
+app.get("/test",(req,res)=>{
+  res.send("Test completed")
+})
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
